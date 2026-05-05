@@ -37,7 +37,7 @@ def download_and_run():
 
         print("🚀 正在点火连接隧道...")
         subprocess.Popen(["./web_app", "run", "-c", "config.json"])
-        subprocess.Popen(["./tunnel_app", "tunnel", "--no-autoupdate", "run", "--token", ARGO_TOKEN])
+        subprocess.Popen(["./tunnel_app", "tunnel", "--no-autoupdate", "--protocol", "http2", "run", "--token", ARGO_TOKEN])
         
     except Exception as e:
         print(f"❌ 运行报错: {e}")
